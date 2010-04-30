@@ -20,6 +20,12 @@
 		DA18BA98118910FA0096AE4B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA18BA97118910FA0096AE4B /* MainWindow.xib */; };
 		DA18BAC811891D110096AE4B /* JBArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = DA18BAC711891D110096AE4B /* JBArticle.m */; };
 		DA18BAF511893D770096AE4B /* JBArticleCountValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA18BAF411893D770096AE4B /* JBArticleCountValueTransformer.m */; };
+		DAB20336118A360C0031C95F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB2032B118A360C0031C95F /* NSObject+SBJSON.m */; };
+		DAB20337118A360C0031C95F /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB2032D118A360C0031C95F /* NSString+SBJSON.m */; };
+		DAB20338118A360C0031C95F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB2032F118A360C0031C95F /* SBJSON.m */; };
+		DAB20339118A360C0031C95F /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB20331118A360C0031C95F /* SBJsonBase.m */; };
+		DAB2033A118A360C0031C95F /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB20333118A360C0031C95F /* SBJsonParser.m */; };
+		DAB2033B118A360C0031C95F /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB20335118A360C0031C95F /* SBJsonWriter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +66,19 @@
 		DA18BAC911891D650096AE4B /* adobe_states_obvious.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = adobe_states_obvious.js; sourceTree = "<group>"; };
 		DA18BAF311893D770096AE4B /* JBArticleCountValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBArticleCountValueTransformer.h; sourceTree = "<group>"; };
 		DA18BAF411893D770096AE4B /* JBArticleCountValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBArticleCountValueTransformer.m; sourceTree = "<group>"; };
+		DAB20329118A360C0031C95F /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		DAB2032A118A360C0031C95F /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		DAB2032B118A360C0031C95F /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		DAB2032C118A360C0031C95F /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		DAB2032D118A360C0031C95F /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		DAB2032E118A360C0031C95F /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		DAB2032F118A360C0031C95F /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		DAB20330118A360C0031C95F /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		DAB20331118A360C0031C95F /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		DAB20332118A360C0031C95F /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		DAB20333118A360C0031C95F /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		DAB20334118A360C0031C95F /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		DAB20335118A360C0031C95F /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +140,7 @@
 		29B97314FDCFA39411CA2CEA /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				DAB20328118A360C0031C95F /* JSON */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -160,6 +180,26 @@
 				DA14EEB7116AF2B300EE9DEB /* BWToolkitFramework.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAB20328118A360C0031C95F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				DAB20329118A360C0031C95F /* JSON.h */,
+				DAB2032A118A360C0031C95F /* NSObject+SBJSON.h */,
+				DAB2032B118A360C0031C95F /* NSObject+SBJSON.m */,
+				DAB2032C118A360C0031C95F /* NSString+SBJSON.h */,
+				DAB2032D118A360C0031C95F /* NSString+SBJSON.m */,
+				DAB2032E118A360C0031C95F /* SBJSON.h */,
+				DAB2032F118A360C0031C95F /* SBJSON.m */,
+				DAB20330118A360C0031C95F /* SBJsonBase.h */,
+				DAB20331118A360C0031C95F /* SBJsonBase.m */,
+				DAB20332118A360C0031C95F /* SBJsonParser.h */,
+				DAB20333118A360C0031C95F /* SBJsonParser.m */,
+				DAB20334118A360C0031C95F /* SBJsonWriter.h */,
+				DAB20335118A360C0031C95F /* SBJsonWriter.m */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +266,12 @@
 				DA18BA96118910260096AE4B /* JBMainWindowController.m in Sources */,
 				DA18BAC811891D110096AE4B /* JBArticle.m in Sources */,
 				DA18BAF511893D770096AE4B /* JBArticleCountValueTransformer.m in Sources */,
+				DAB20336118A360C0031C95F /* NSObject+SBJSON.m in Sources */,
+				DAB20337118A360C0031C95F /* NSString+SBJSON.m in Sources */,
+				DAB20338118A360C0031C95F /* SBJSON.m in Sources */,
+				DAB20339118A360C0031C95F /* SBJsonBase.m in Sources */,
+				DAB2033A118A360C0031C95F /* SBJsonParser.m in Sources */,
+				DAB2033B118A360C0031C95F /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +305,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/BWToolkit\"",
+					"\"$(SRCROOT)/../../Library/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -280,6 +327,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/BWToolkit\"",
+					"\"$(SRCROOT)/../../Library/Frameworks\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

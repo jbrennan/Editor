@@ -27,5 +27,6 @@
 
 
 - (IBAction)addAction:(id)sender;
+- (void)loadArticlesFromDisk;
 
 @end
