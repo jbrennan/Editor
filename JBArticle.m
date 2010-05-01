@@ -24,12 +24,23 @@
 @synthesize bodyText = _bodyText;
 
 
+#pragma mark -
+#pragma mark Object Lifecycle
+
 - (id)init {
 	if (self = [super init]) {
-		self.headline = @"New headline";
+		_articleUpdated = NO;
+	}
+	
+	return self;
+}
+
+
+- (id)initNewArticle {
+	if (self = [super init]) {
+		_articleUpdated = YES;
+		self.createdAtDate = [NSDate date];
 		self.updatedAtDate = [NSDate date];
-		self.bodyText = @"This is a somewhat long string used to illustrate the bindings";
-		// etcetera
 	}
 	
 	return self;
@@ -42,5 +53,26 @@
 	
 	[super dealloc];
 }
+
+
+- (void)save {
+	_articleUpdated = NO; // because we've saved, now the article can again be changed so we must track that
+}
+
+
+#pragma mark -
+#pragma mark Custom accessors
+
+- (void)setUpdatedAtDate:(NSDate *)newUpdatedDate {
+	if ([newUpdatedDate isEqualToDate:_updatedAtDate])
+		return;
+	
+	[_updatedAtDate release];
+	_updatedAtDate = [_updatedAtDate retain];
+	
+	if (nil != newUpdatedDate)
+		_articleUpdated = YES;
+}
+
 
 @end

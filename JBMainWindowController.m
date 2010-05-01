@@ -10,6 +10,17 @@
 #import "JBArticle.h"
 #import "JSON.h"
 
+#define kHeadlineKey @"headline"
+#define kLedeKey @"lede"
+#define kAuthorNameKey @"author"
+#define kByLineKey @"by_line"
+#define kAltTextKey @"alt_text"
+#define kBodyFileKey @"body_text" // not a bug!!
+#define kSourceLinkKey @"source"
+#define kCreatedAtKey @"created_at"
+#define kUpdatedAtKey @"updated_at"
+
+
 @implementation JBMainWindowController
 @synthesize tableView = _tableView;
 @synthesize textView = _textView;
@@ -23,13 +34,6 @@
 	self.internalArrayOfArticles = [NSMutableArray array];
 	[self loadArticlesFromDisk];
 	
-	JBArticle *a1 = [[JBArticle alloc] init];
-	JBArticle *a2 = [[JBArticle alloc] init];
-	
-	a1.headline = @"Wickedsweet first headline";
-	
-	//[self.arrayController addObject:a1];
-	//[self.arrayController addObject:a2];
 	
 	
 }
@@ -74,18 +78,20 @@
 		SBJSON *parser = [[[SBJSON alloc] init] autorelease];
 		NSDictionary *articleDictionary = [parser objectWithString:jsonString];
 		
-		JBArticle *readArticle = [[JBArticle alloc] init];
-		readArticle.headline = [articleDictionary objectForKey:@"headline"];
-		readArticle.lede = [articleDictionary objectForKey:@"lede"];
-		readArticle.authorName = [articleDictionary objectForKey:@"author"];
-		readArticle.byLine = [articleDictionary objectForKey:@"by_line"];
-		readArticle.altText = [articleDictionary objectForKey:@"alt_text"];
-		readArticle.bodyFile = [articleDictionary objectForKey:@"body_text"];
-		readArticle.bodyText = [NSString stringWithContentsOfFile:readArticle.bodyFile encoding:NSUTF8StringEncoding error:NULL];
-		readArticle.sourceLink = [articleDictionary objectForKey:@"source"];
+
 		
-		readArticle.createdAtDate = [NSDate dateWithNaturalLanguageString:[articleDictionary objectForKey:@"created_at"]];
-		readArticle.updatedAtDate = [NSDate dateWithNaturalLanguageString:[articleDictionary objectForKey:@"updated_at"]];
+		JBArticle *readArticle = [[JBArticle alloc] init];
+		readArticle.headline = [articleDictionary objectForKey:kHeadlineKey];
+		readArticle.lede = [articleDictionary objectForKey:kLedeKey];
+		readArticle.authorName = [articleDictionary objectForKey:kAuthorNameKey];
+		readArticle.byLine = [articleDictionary objectForKey:kByLineKey];
+		readArticle.altText = [articleDictionary objectForKey:kAltTextKey];
+		readArticle.bodyFile = [articleDictionary objectForKey:kBodyFileKey];
+		readArticle.bodyText = [NSString stringWithContentsOfFile:readArticle.bodyFile encoding:NSUTF8StringEncoding error:NULL];
+		readArticle.sourceLink = [articleDictionary objectForKey:kSourceLinkKey];
+		
+		readArticle.createdAtDate = [NSDate dateWithNaturalLanguageString:[articleDictionary objectForKey:kCreatedAtKey]];
+		readArticle.updatedAtDate = [NSDate dateWithNaturalLanguageString:[articleDictionary objectForKey:kUpdatedAtKey]];
 		
 		[self.arrayController addObject:readArticle];
 		

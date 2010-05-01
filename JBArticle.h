@@ -24,6 +24,8 @@
 	
 	NSString *_bodyText;
 	
+	BOOL _articleUpdated;
+	
 }
 
 @property (nonatomic, copy) NSString *headline;
@@ -38,5 +40,8 @@
 @property (nonatomic, retain) NSDate *createdAtDate;
 @property (nonatomic, retain) NSDate *updatedAtDate;
 @property (nonatomic, copy) NSString *bodyText;
+
+
+- (id)initNewArticle;
 
 @end
