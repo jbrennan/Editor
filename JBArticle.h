@@ -43,5 +43,6 @@
 
 
 - (id)initNewArticle;
+- (void)save;
 
 @end

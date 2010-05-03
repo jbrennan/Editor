@@ -10,7 +10,11 @@
 
 
 @interface JBPreferencesWindowController : NSWindowController {
-
+	NSTextField *pathTextField;
 }
+
+@property (nonatomic, retain) IBOutlet NSTextField *pathTextField;
+
+- (IBAction)browse:(id)sender;
 
 @end
