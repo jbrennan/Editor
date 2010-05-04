@@ -27,6 +27,7 @@
 
 
 - (IBAction)addNewArticle:(id)sender;
+- (IBAction)saveAction:(id)sender;
 - (void)loadArticlesFromDisk;
 
 @end

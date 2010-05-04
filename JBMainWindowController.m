@@ -47,6 +47,11 @@
 }
 
 
+- (IBAction)saveAction:(id)sender {
+	[(NSArray *)[self.arrayController arrangedObjects] makeObjectsPerformSelector:@selector(saveIfNeeded)];
+}
+
+
 - (void)startObservingArticle:(JBArticle *)article {
 	
 	[article addObserver:self 
@@ -142,6 +147,7 @@
 		readArticle.altText = [articleDictionary objectForKey:kAltTextKey];
 		readArticle.bodyFile = [articleDictionary objectForKey:kBodyFileKey];
 		readArticle.bodyText = [NSString stringWithContentsOfFile:readArticle.bodyFile encoding:NSUTF8StringEncoding error:NULL];
+		readArticle.metaFile = jsFileName;
 		readArticle.sourceLink = [articleDictionary objectForKey:kSourceLinkKey];
 		
 		readArticle.createdAtDate = [NSDate dateWithNaturalLanguageString:[articleDictionary objectForKey:kCreatedAtKey]];

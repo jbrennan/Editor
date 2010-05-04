@@ -22,5 +22,6 @@
 @property (nonatomic, retain) JBMainWindowController *mainWindowController;
 
 - (IBAction)showPreferences:(id)sender;
+- (IBAction)saveAction:(id)sender;
 
 @end

@@ -41,6 +41,11 @@
 }
 
 
+- (IBAction)saveAction:(id)sender {
+	[[self mainWindowController] saveAction:self];
+}
+
+
 - (void)dealloc {
 	self.preferencesController = nil;
 	[super dealloc];
