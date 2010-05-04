@@ -10,15 +10,12 @@
 #import "JBArticle.h"
 #import "JSON.h"
 
-#define kHeadlineKey @"headline"
-#define kLedeKey @"lede"
-#define kAuthorNameKey @"author"
-#define kByLineKey @"by_line"
-#define kAltTextKey @"alt_text"
-#define kBodyFileKey @"body_text" // not a bug!!
-#define kSourceLinkKey @"source"
-#define kCreatedAtKey @"created_at"
-#define kUpdatedAtKey @"updated_at"
+
+
+
+@interface JBMainWindowController ()
+- (void)startObservingArticle:(JBArticle *)article;
+@end
 
 
 @implementation JBMainWindowController
@@ -39,9 +36,66 @@
 }
 
 
-- (IBAction)addAction:(id)sender {
-	NSLog(@"Add button pressed");
+- (IBAction)addNewArticle:(id)sender {
+	JBArticle *newArticle = [[JBArticle alloc] initNewArticle];
+	
+	[self startObservingArticle:newArticle];
+	
+	[self.arrayController addObject:newArticle];
+	
+	[newArticle release];
 }
+
+
+- (void)startObservingArticle:(JBArticle *)article {
+	
+	[article addObserver:self 
+				 forKeyPath:@"headline" 
+					options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) 
+					context:NULL];
+	
+	[article addObserver:self 
+				 forKeyPath:@"source" 
+					options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) 
+					context:NULL];
+	
+	[article addObserver:self 
+				 forKeyPath:@"bodyText" 
+					options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) 
+					context:NULL];
+	
+	[article addObserver:self 
+				 forKeyPath:@"altText" 
+					options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) 
+					context:NULL];
+	
+	[article addObserver:self 
+				 forKeyPath:@"createdAtDate" 
+					options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) 
+					context:NULL];
+	
+	//[article addObserver:self 
+//				 forKeyPath:@"updatedAtDate" 
+//					options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) 
+//					context:NULL];
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+	if ([object isKindOfClass:[JBArticle class]]) {
+		//[(JBArticle *)object setUpdatedAtDate:[NSDate date]];
+		[(JBArticle *)object setArticleUpdated:YES];
+		NSLog(@"Got KVO notification for an Article, have marked it as updated and changed the time");
+	}
+    // be sure to call the super implementation
+    // if the superclass implements it
+    //[super observeValueForKeyPath:keyPath
+//						 ofObject:object
+//						   change:change
+//						  context:context];
+}
+
 
 
 - (void)loadArticlesFromDisk {
@@ -93,6 +147,7 @@
 		readArticle.createdAtDate = [NSDate dateWithNaturalLanguageString:[articleDictionary objectForKey:kCreatedAtKey]];
 		readArticle.updatedAtDate = [NSDate dateWithNaturalLanguageString:[articleDictionary objectForKey:kUpdatedAtKey]];
 		
+		[self startObservingArticle:readArticle]; // Start observing AFTER everything has been initially set.
 		[self.arrayController addObject:readArticle];
 		
 		[readArticle release];

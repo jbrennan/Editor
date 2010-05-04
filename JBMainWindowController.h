@@ -26,7 +26,7 @@
 @property (nonatomic, retain) NSMutableArray *internalArrayOfArticles;
 
 
-- (IBAction)addAction:(id)sender;
+- (IBAction)addNewArticle:(id)sender;
 - (void)loadArticlesFromDisk;
 
 @end

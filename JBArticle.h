@@ -8,6 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+#define kHeadlineKey @"headline"
+#define kLedeKey @"lede"
+#define kAuthorNameKey @"author"
+#define kByLineKey @"by_line"
+#define kAltTextKey @"alt_text"
+#define kBodyFileKey @"body_text" // not a bug!!
+#define kSourceLinkKey @"source"
+#define kCreatedAtKey @"created_at"
+#define kUpdatedAtKey @"updated_at"
 
 @interface JBArticle : NSObject {
 	NSString *_headline;
@@ -40,9 +49,10 @@
 @property (nonatomic, retain) NSDate *createdAtDate;
 @property (nonatomic, retain) NSDate *updatedAtDate;
 @property (nonatomic, copy) NSString *bodyText;
+@property (getter=isArticleUpdated) BOOL articleUpdated;
 
 
 - (id)initNewArticle;
-- (void)save;
+- (void)saveIfNeeded;
 
 @end
