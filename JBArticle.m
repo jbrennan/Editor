@@ -102,11 +102,11 @@
 	
 	// Format the dates so they may be saved as a string
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setDateStyle:NSDateFormatterFullStyle];
+	[dateFormatter setDateStyle:NSDateFormatterLongStyle];
 	[dateFormatter setTimeStyle:NSDateFormatterFullStyle];
 	
-	NSString *createdAtString = [dateFormatter stringFromDate:self.createdAtDate];
-	NSString *updatedAtString = [dateFormatter stringFromDate:self.updatedAtDate];
+	NSString *createdAtString = [[dateFormatter stringFromDate:self.createdAtDate] stringByReplacingOccurrencesOfString:@"," withString:@""];
+	NSString *updatedAtString = [[dateFormatter stringFromDate:self.updatedAtDate] stringByReplacingOccurrencesOfString:@"," withString:@""];
 	
 	[dateFormatter release];
 	
