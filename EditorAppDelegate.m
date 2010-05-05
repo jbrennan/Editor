@@ -46,6 +46,48 @@
 }
 
 
+- (IBAction)publish:(id)sender {
+	[self saveAction:self];
+	
+	NSString *launchPath = @"/usr/local/git/bin/git";
+	NSString *directoryPath = [[NSUserDefaults standardUserDefaults] stringForKey:@"articleDirectory"];
+	
+	NSTask *task;
+	task = [[NSTask alloc] init];
+	[task setLaunchPath: @"/usr/local/git/bin/git"];
+	[task setCurrentDirectoryPath:directoryPath];
+	
+	NSArray *arguments;
+	arguments = [NSArray arrayWithObjects: @"add", @".", nil];
+	[task setArguments: arguments];
+	
+	[task launch];
+	[task waitUntilExit];
+	
+	NSTask *commitTask = [[NSTask alloc] init];
+	[commitTask setLaunchPath:launchPath];
+	[commitTask setCurrentDirectoryPath:directoryPath];
+	
+	[commitTask setArguments:[NSArray arrayWithObjects:@"commit", @"-m", @"\"`date`\"", nil]];
+	
+	[commitTask launch];
+	[commitTask waitUntilExit];
+	
+	NSTask *pushTask = [[NSTask alloc] init];
+	[pushTask setLaunchPath:launchPath];
+	[pushTask setCurrentDirectoryPath:directoryPath];
+	[pushTask setArguments:[NSArray arrayWithObjects:@"push", nil]];
+	
+	[pushTask launch];
+	[pushTask waitUntilExit];
+	
+	[task release];
+	[commitTask release];
+	[pushTask release];
+	
+}
+
+
 - (void)dealloc {
 	self.preferencesController = nil;
 	[super dealloc];

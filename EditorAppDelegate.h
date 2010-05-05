@@ -23,5 +23,6 @@
 
 - (IBAction)showPreferences:(id)sender;
 - (IBAction)saveAction:(id)sender;
+- (IBAction)publish:(id)sender;
 
 @end

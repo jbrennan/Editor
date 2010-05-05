@@ -30,6 +30,7 @@
 	
 	self.internalArrayOfArticles = [NSMutableArray array];
 	[self loadArticlesFromDisk];
+	//[self.textView set
 	
 	
 	
