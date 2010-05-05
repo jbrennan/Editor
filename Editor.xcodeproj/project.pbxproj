@@ -20,6 +20,7 @@
 		DA18BA98118910FA0096AE4B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA18BA97118910FA0096AE4B /* MainWindow.xib */; };
 		DA18BAC811891D110096AE4B /* JBArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = DA18BAC711891D110096AE4B /* JBArticle.m */; };
 		DA18BAF511893D770096AE4B /* JBArticleCountValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DA18BAF411893D770096AE4B /* JBArticleCountValueTransformer.m */; };
+		DA5440D1119138A400642FBA /* Editor Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = DA5440D0119138A400642FBA /* Editor Icon.icns */; };
 		DAB20336118A360C0031C95F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB2032B118A360C0031C95F /* NSObject+SBJSON.m */; };
 		DAB20337118A360C0031C95F /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB2032D118A360C0031C95F /* NSString+SBJSON.m */; };
 		DAB20338118A360C0031C95F /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB2032F118A360C0031C95F /* SBJSON.m */; };
@@ -66,6 +67,7 @@
 		DA18BAC911891D650096AE4B /* adobe_states_obvious.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = adobe_states_obvious.js; sourceTree = "<group>"; };
 		DA18BAF311893D770096AE4B /* JBArticleCountValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBArticleCountValueTransformer.h; sourceTree = "<group>"; };
 		DA18BAF411893D770096AE4B /* JBArticleCountValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBArticleCountValueTransformer.m; sourceTree = "<group>"; };
+		DA5440D0119138A400642FBA /* Editor Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Editor Icon.icns"; sourceTree = "<group>"; };
 		DAB20329118A360C0031C95F /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		DAB2032A118A360C0031C95F /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		DAB2032B118A360C0031C95F /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DA5440D0119138A400642FBA /* Editor Icon.icns */,
 				DA18BAC911891D650096AE4B /* adobe_states_obvious.js */,
 				DA18BA97118910FA0096AE4B /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Editor-Info.plist */,
@@ -250,6 +253,7 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				DA14EEFD116AF3F700EE9DEB /* JBEditorPreferences.xib in Resources */,
 				DA18BA98118910FA0096AE4B /* MainWindow.xib in Resources */,
+				DA5440D1119138A400642FBA /* Editor Icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
